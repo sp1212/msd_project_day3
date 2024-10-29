@@ -7,6 +7,7 @@ public class CustomerFactory {
 	public static Customer getCustomer(String json_string){
 		
         // parsing file "JSONExample.json" 
+		System.out.println(json_string);
         JSONObject jobj = new org.json.JSONObject(json_string); 
           
         // getting firstName and lastName 

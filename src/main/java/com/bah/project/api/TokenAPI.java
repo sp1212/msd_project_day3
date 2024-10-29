@@ -49,6 +49,8 @@ public class TokenAPI {
 		}
 		// make call to customer service 
 		Customer cust = getCustomerByNameFromCustomerAPI(username);
+		System.out.println("Username="+cust.getName());
+		System.out.println("Password="+cust.getPassword());
 		
 		// compare name and password
 		if(cust != null && cust.getName().equals(username) && cust.getPassword().equals(password)) {
