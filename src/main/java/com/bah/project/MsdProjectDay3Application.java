@@ -1,4 +1,4 @@
-package com.bah.project.msd_project_day3;
+package com.bah.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
