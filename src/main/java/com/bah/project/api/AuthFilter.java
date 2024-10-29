@@ -28,7 +28,7 @@ public class AuthFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		String uri = req.getRequestURI();
-		if (uri.startsWith("/account/token")) {
+		if (uri.startsWith("/account/token") || uri.startsWith("/account/register")) {
 			System.out.println("Got to token endpoint");
 			// continue on to get-token endpoint
 			chain.doFilter(request, response);
