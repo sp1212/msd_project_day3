@@ -7,17 +7,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.api.Authenticator;
-import com.example.api.JWTHelper;
-import com.example.api.JWTUtil;
-import com.example.api.Token;
-import com.example.api.TokenRequestData;
+import com.bah.project.api.JWTUtil;
+import com.bah.project.api.Token;
+import com.bah.project.api.TokenRequestData;
 
 @RestController
 @RequestMapping("/token")
 public class tokenAPI {
 
-	JWTUtil jwtUtil = new JWTHelper();
+	JWTUtil jwtUtil = new JWTMockUtil();
 
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<?> getToken(@RequestBody TokenRequestData tokenRequestData) {
@@ -27,7 +25,7 @@ public class tokenAPI {
 		String scopes = tokenRequestData.getScopes();
 
 		if (username != null && username.length() > 0 && password != null && password.length() > 0
-				&& Authenticator.checkPassword(username, password)) {
+				/*&& Authenticator.checkPassword(username, password)*/) {
 			Token token = jwtUtil.createToken(scopes);
 			ResponseEntity<?> response = ResponseEntity.ok(token);
 			return response;
