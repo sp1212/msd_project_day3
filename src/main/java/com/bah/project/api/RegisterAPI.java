@@ -1,5 +1,5 @@
 package com.bah.project.api;
 
-public class registerAPI {
+public class RegisterAPI {
 
 }

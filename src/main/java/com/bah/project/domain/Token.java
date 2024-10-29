@@ -1,4 +1,4 @@
-package com.bah.project.api;
+package com.bah.project.domain;
 
 public class Token {
 	String token;

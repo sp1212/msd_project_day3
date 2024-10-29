@@ -1,5 +1,7 @@
 package com.bah.project.api;
 
+import com.bah.project.domain.Token;
+
 public class JWTMockUtil implements JWTUtil {
 
 	public boolean verifyToken(String jwt_token) {
