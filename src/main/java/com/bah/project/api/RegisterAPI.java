@@ -50,6 +50,7 @@ public class RegisterAPI {
 			String apiHost = System.getenv("APIHOST");
 			String apiURL  = "http://" + apiHost + "/api/customers";
 			URL url = new URL(apiURL);
+			System.out.println(apiURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
