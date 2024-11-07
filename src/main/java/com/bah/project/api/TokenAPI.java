@@ -99,9 +99,12 @@ public class TokenAPI {
 
 	private Customer getCustomerByNameFromCustomerAPI(String username) {
 		try {
-
-			URL url = new URL("http://localhost:8080/api/customers/byname/" + username);
+			
+			String apiHost = System.getenv("APIHOST");
+			String apiURL  = "http://" + apiHost + "/api/customers/byname/" + username;
+			URL url = new URL(apiURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
 			Token token = getAppUserToken();
